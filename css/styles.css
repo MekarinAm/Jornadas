@@ -1,0 +1,1144 @@
+/*CODIGO JOSE*/
+/*EN ROOT DEFINIMOS COSAS QUE USAREMOS EN TODO EL CODIGO*/
+:root {
+    --blanco: #ffffff;
+    --blanco2: #e7e7e7;
+    --negro: #212121;
+    --dorado: #f7dd89;
+    --gris: #757575;
+    --azulTec: #1a306a;
+    --grisClaro: #DFE9F3;
+}
+html{
+    /*Ajustamos la letra para poder manejar rem en todo el archivo*/
+    font-size: 62.5%;
+
+    /*Agregamos box sizing border box para no tener problemas con los tamaños de los elementos */
+    box-sizing: border-box;
+
+    /*Funcion para pasar del menu a secciones con vista de scroll*/
+    scroll-behavior: smooth;
+}
+
+/*Se seleccionan todos lo elementos del html y les aplica el box sizing border box para no tener problemas con los tamaños de los elementos */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    /*Ajustamos la letra para poder manejar rem en todo el archivo*/
+    font-size: 16px;
+    /*Se agrega la fuente*/
+    font-family: 'Play', sans-serif;
+    /*Degradado*/
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100% );
+
+    /*Opcion para siempre tener el footer en la parte inferior sin importar si hay mucho o poco contenido ne la pagina*/
+    display: flex;  
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.boton{
+    background-color: var(--azulTec);
+    color: var(--blanco);
+    padding: .5rem .5rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    text-align: center;
+}
+.boton:hover{
+    background-color: var(--blanco);
+    border: 2px solid var(--azulTec);
+    color: var(--azulTec);
+}
+
+
+.sombra{
+    -webkit-box-shadow: 7px 9px 24px 5px rgba(0,0,0,0.24);
+    -moz-box-shadow: 7px 9px 24px 5px rgba(0,0,0,0.24);
+    box-shadow: 7px 9px 24px 5px rgba(0,0,0,0.24);
+    background-color: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+@media(min-width: 768px){
+    .sombra{
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+}
+
+/*Tipografia*/
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h1,h2,h3 {
+    text-align: center;
+}
+/*Logos arriba de la barra de navegacion*/
+.logos{
+    background-color: var(--blanco);
+}
+.logos_img{
+    width: 120px;
+    height: 100px;
+    margin-bottom: 30px;
+    object-fit: contain;    
+    max-width:100%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+/*Imagenes de los ponentes y profesores*/
+.logos2{
+    background-color: var(--blanco);
+}
+.logos_img2{
+    width: 320px;
+    height: 300px;
+    object-fit: contain;    
+    max-width:100%;
+    padding-bottom: 1rem;
+    margin: auto;
+    justify-content:center;
+}
+
+/*configuracion para mostrar los cv's*/
+iframe{
+    width: 100%;
+    height: 150vh;
+}
+
+.figure{
+    position:relative;
+     cursor: pointer;
+     overflow: hidden;
+     border-radius: 6px;
+ }
+ .figure img{
+     width: 100%;
+     height: 100%;
+     transition: all 400ms ease-out;
+     will-change: transform;
+ }
+ .figure .capa{
+     position: absolute;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0,103,123,0.7);
+     transition: all 400ms ease-out;
+     opacity: 0;
+     visibility: hidden;
+    text-align: center;
+ }
+ .figure:hover > .capa {
+     opacity: 1;
+     visibility: visible;
+ }
+ .figure:hover > .capa h3{
+     margin-top: 70px;
+     margin-bottom: 15px;
+ }
+ .figure:hover > img{
+     transform: scale(1.3);
+ }
+ .figure .capa h3{
+     color: #fff;
+     font-weight: 400;
+     margin-bottom: 120px;
+     transition: all 400ms ease-out;
+      margin-top: 30px;
+ }
+.figure .capa p{
+     color: #fff;
+     font-size: 15px;
+     line-height: 1.5;
+     width: 100%;
+     max-width: 220px;
+     margin: auto;
+     padding-bottom: 1rem;
+ }
+
+
+/*fin de los CV'S*/
+
+
+.TyC8{
+    /*Usamos grid para definir ubicacion y tamaño de esta seccion*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+    width: 100%;
+
+}
+
+.TyC3{
+    /*Usamos grid para definir ubicacion y tamaño de esta seccion*/
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1rem;
+    
+
+}
+/*Configuracion de logos arriba de navegacion en escritorio*/
+@media(min-width: 768px){
+    .logos_img{
+        width: 250px;
+        height: 150px;
+    }
+    .logos{
+        justify-content: space-between;
+        display: flex;
+        background-color: var(--blanco);
+    }
+    .TyC3{
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        
+    }
+
+}
+
+
+/*BARRA DE NAVEGACION*/
+.nav-bg{
+    background-color: var(--azulTec);  
+}
+
+.navegacion-principal{
+    /*Habilitamos flexbox*/
+    display: flex;
+    /*Mostramos la barra de arriba hacia abajo para coordinar con una vista de telefono*/
+    flex-direction: column;
+}
+ /*Usamos media para regresar a la propiedad row para mostrar la barra de navegacion en fila cuando la pantalla sea mayor a 768px*/
+@media(min-width: 768px){
+    .contenedor{
+        flex-direction: row;
+        /*Distribuimos los enlaces*/
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a{
+    /*Centramos los links*/
+    display: block;
+    text-align: center;
+    
+    padding: 1rem;
+    color: var(--blanco);
+    /*Se quita el subrayado de los enlaces*/
+    text-decoration: none;
+    /*Aumentamos el tamaño de letra*/
+    font-size: 2rem;
+    /*Ponemos la letra en negrita*/
+    font-weight: bold;
+}
+/*Color al pasar el mouse sobre el enlace*/
+.navegacion-principal a:hover{
+    color: var(--gris);
+}
+
+.hero {
+    background-image: url(../media/hero2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    position:relative;
+    margin-bottom: 1rem;
+}
+.contenido-hero {
+    position: absolute;
+   
+    background-color: rgb( 0 0 0 / 30% );
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align:center;
+
+}
+
+.contenido-hero h2, 
+.contenido-hero p {
+    color: var(--blanco);
+}
+.contenido-hero h2{
+    font-size: 2.5rem;
+}
+
+.contenido-hero p {
+    font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+    .contenido-hero h2{
+        font-size: 3.8rem;
+    }
+}
+
+/** tallconf **/
+@media (min-width: 768px) {
+    .TyC {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+    }
+}
+
+.tallconf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tallconf h2 {
+    color: var(--secundario);
+    font-weight:bold;
+}
+.tallconf p {
+    line-height: 2;
+    text-align: justify;
+    font-size: 2rem;
+}
+
+
+@media (min-width: 768px) {
+    .ponentes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
+}
+
+
+/*
+.ponente {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ponente h2 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+.ponente p {
+    line-height: 2;
+    text-align: center;
+}
+.iconos {
+    
+    height: 1rem;
+    width: 15rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+*/
+
+
+/*sliders en mobile*/
+/*espacio dedicado para el contenedor del slide*/
+.slider-frame {
+    width: 300px;
+    height: auto;
+    margin:50px auto 0;
+    overflow: hidden;
+}
+/*Espacio y comportamiento pata ul que contiene los li de slides*/
+.slider-frame ul {
+    display: flex;
+    padding: 0;
+    width: 1000%;
+    /*con esto se crea la varibale slide para la animacion*/
+    animation: slide 40s infinite alternate ease-in-out;
+}
+/*Se le quita la configyracion de lista a las imagenes en html para que se puedan animar*/
+.slider-frame li {
+    width: 100%;
+    list-style: none;
+}
+/*Tamaño que ocupara cada imagen*/
+.slider-frame img {
+    width: 100%;
+}
+/*Con esto se le da el tiempo de cada imagen para hacer la animaciuon de transicion*/
+@keyframes slide {
+    /*0% {margin-left: 0;}
+    20% {margin-left: 0;}
+    
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+*/
+    0% {margin-left: 0;}
+    9% {margin-left: 0;}
+    
+    10% {margin-left: -100%;}
+    19% {margin-left: -100%;}
+    
+    20% {margin-left: -200%;}
+    29% {margin-left: -200%;}
+    
+    30% {margin-left: -300%;}
+    39% {margin-left: -300%;}
+    
+    40% {margin-left: -400%;}
+    49% {margin-left: -400%;}
+    
+    50% {margin-left: -500%;}
+    59% {margin-left: -500%;}
+    
+    60% {margin-left: -600%;}
+    69% {margin-left: -600%;}
+    
+    70% {margin-left: -700%;}
+    79% {margin-left: -700%;}
+    
+    80% {margin-left: -800%;}
+    89% {margin-left: -800%;}
+
+    90% {margin-left: -900%;}
+    99% {margin-left: -900%;}
+    
+    
+}
+
+
+.slider-frame1 {
+    width: 300px;
+    height: auto;
+    margin:50px auto 0;
+    overflow: hidden;
+}
+/*Espacio y comportamiento pata ul que contiene los li de slides*/
+.slider-frame1 ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    /*con esto se crea la varibale slide para la animacion*/
+    animation: slide1 16s infinite alternate ease-in-out;
+}
+/*Se le quita la configyracion de lista a las imagenes en html para que se puedan animar*/
+.slider-frame1 li {
+    width: 100%;
+    list-style: none;
+}
+/*Tamaño que ocupara cada imagen*/
+.slider-frame1 img {
+    width: 100%;
+}
+/*Con esto se le da el tiempo de cada imagen para hacer la animaciuon de transicion*/
+@keyframes slide1 {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+    
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    
+    75% {margin-left: -300%;}
+    90% {margin-left: -300%;}  
+}
+/*Fin sliders en mobile*/
+
+
+
+/*CSS de la pagina de paquetes*/
+/*Margen de los container y alineaciosn del texto*/
+#paquetes .container{
+    padding: 70px 12px; 
+    text-align: justify;
+    
+}
+/*configuracion de las imagenes de fondo de cada carta de paquete*/
+#paquetes .carta{
+    background-position: center center;
+    background-size: cover;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 15px;
+    color: white;
+}
+@media(min-width: 768px){
+    #paquetes .carta{
+        height: 33em;
+        width: 10.5em;
+        margin-right: auto;
+        padding: 9px;
+    }
+
+}
+@media(min-width: 1200px){
+    #paquetes .carta{
+        height: 23em;
+        width: 19em;
+        padding: 30px;
+        margin: 20px;
+    }
+
+}
+/*asignacion de imagen del primer paquete*/
+.carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("../media/principal.jpg");
+   
+}
+/*asignacion de imagen del segundo paquete*/
+.carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("../media/talleres.jpg");
+   
+}
+/*asignacion de imagen del tercer paquete paquete*/
+.carta:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("../media/paquetes.jpg");
+}
+
+/*H2 de paquetes*/
+.sombra h2{
+    padding-top:  2.5rem;
+}
+.TyC2{
+    /*Usamos grid para definir ubicacion y tamaño de esta seccion*/
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 1rem;
+    
+
+}
+@media(min-width: 768px){
+    .TyC2{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
+/*Fin de la pagina de paquetes*/
+ 
+
+
+
+/*CODIGO JAIR*/
+/*============================
+   Código JAIR CSS de diseño de voucher
+================================*/
+/*estilos de titulos*/
+#titulo h1{
+    background-color: var(--azulTec);
+    color: white;
+    padding: 2rem;
+}
+#titulo h2{
+    margin: 20px;
+    font-size: 3.5rem;
+}
+/*creacion de contenedor de tabla*/
+.container_table{
+    width: 100%;
+    margin: auto;
+    display: grid;
+    
+}
+/*contenedor de los folios del voucher y el recibo rosa*/
+.contenedor_folio{
+    width: 100%;
+    margin: auto;
+
+    
+}
+/*estilo del titulo de la tabla de alumno*/
+.table_title{
+    margin: 0px 2px;
+    background-color: var(--azulTec);
+    color: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 2rem;
+    text-transform: uppercase;
+    
+}
+/*estilo de la tabla de alumno*/
+.table_datos tr{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    background-color: gainsboro;
+    text-transform: capitalize;
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: 1px solid black;
+}
+tr{
+    border-bottom: 1px solid black;
+}
+/*estilo del titulo de la tabla de pago*/
+.table_title2{
+    margin: 0px 2px;
+    background-color: var(--azulTec);
+    color: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 2rem;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+/*estilo de la tabla de pago*/
+sombra
+.table_pago tr{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    background-color: gainsboro;
+    text-transform: capitalize;
+    font-size: 2rem;
+    border: 1px solid black;
+
+}
+.table_pago th{
+    border-right: 1px solid black;
+    width: 50%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+
+}
+/*estilo del número de voucher*/
+#voucher{
+    width: 50%;
+    float: left;
+    margin-top: 2rem;
+    word-wrap: break-word;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background-color: #1a306a;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 50px;
+    margin-bottom: -50px;
+
+    
+    
+}
+/*estilo del número de recibo rosa*/
+#recibo{
+    width: 50%;
+    float: left;
+    margin-top: 2rem;
+    word-wrap: break-word;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background-color: var(--gris);
+    color: white;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 50px;
+    margin-bottom: -50px;
+}
+#textbox1{
+    overflow: hidden;
+    word-wrap: break-word;
+    background-color: var(--azulTec);
+    border: none;
+    color: white;
+    
+}
+#textbox2{
+    overflow: hidden;
+    word-wrap: break-word;
+    background-color: var(--gris);
+    border: var(--grisClaro);
+    color: white;
+
+}
+
+/*estilo de la nota*/
+#nota{
+    background-color: var(--dorado);
+    margin-top: 6rem;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+#nota h2{
+    margin-top: 0.1rem;
+}
+#nota p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+   
+}
+/*Diseño resposivo del voucher*/
+@media(min-width: 768px){
+    .contenedor.sombra{
+        width: 90%;
+    }
+
+    .table_datos tr{
+        flex-direction: row;
+        padding: 0;
+    }
+    .table_datos th{
+        border-right: 1px solid black;
+        width: 30%;
+        display: flex;
+        justify-content:flex-start;
+    }
+    .table_pago th{
+        width: 30%;
+    }
+    #voucher,#recibo{
+        margin-bottom: -10px;
+        padding-bottom: 10px;
+    }
+}
+
+/*============================
+ Código JAIR Fin CSS de diseño de voucher
+================================*/
+
+/*estilo de botón para imprimir voucher - JAIR*/
+#imprimir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+}
+#imprimir button{
+    color: white;
+    background-color: var(--azulTec);
+    padding: 1.5rem;
+    font-size: 2rem;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+/*efecto cambio de color del botón imprimir- JAIR*/
+#imprimir button:hover{
+    background-color: var(--gris);
+}
+
+
+/*diseño de impresión de voucher de pago - JAIR*/
+@media print{
+    body{
+        background-image: linear-gradient(to top, var(--blanco) 0%, var(--blanco) 100% );
+       
+    }
+   
+    .sombra{
+        -webkit-box-shadow: 7px 9px 24px 5px rgb(255, 255, 255);
+        -moz-box-shadow: 7px 9px 24px 5px rgb(255, 255, 255);
+        box-shadow: 7px 9px 24px 5px rgb(255, 255, 255);
+        background-color: var(--blanco);
+    }
+    .logos,#imprimir,footer{
+        display: none;
+    }
+    #titulo h1{
+        margin-top: 0.1rem;
+    }
+    .table_datos tr{
+        flex-direction: row;
+        padding: 0rem;
+    }
+    .table_datos th{
+        border-right: 1px solid black;
+        display: flex;
+        justify-content:flex-start;
+        width: 30%;
+    }
+    .table_pago th{
+        width: 30%;
+    }
+    #nota{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    #nota h2{
+        padding: auto;
+    }
+    #nota p{
+        padding: auto;
+    }
+    #voucher{
+        padding-bottom: 1px;
+        margin-bottom: -1px;
+    }
+    #recibo{
+        padding-bottom: 30px;
+        margin-bottom: -30px;
+    }
+   
+}
+footer{
+    background-color: var(--azulTec);
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+
+
+/** login **/
+/*botones en index.php*/
+.formulario2 {
+    
+    width: min( 60rem, 100% ); /** Utilizar el valor más pequeño **/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    text-align: center;
+	
+    
+
+}
+.formulario {
+    
+    width: min( 60rem, 100% ); /** Utilizar el valor más pequeño **/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    text-align: center;
+	border: .5rem solid var(--azulTec);
+    
+
+}
+
+
+.formulario fieldset {
+    border-color: var(--dorado);
+}
+.formulario legend {
+    text-align: center;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    color: var(--negro);
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto 2rem ;
+    }
+
+}
+.campo {
+    margin-bottom: 2rem;
+}
+.input-text {
+    padding: 10px;
+	width: 100%;
+    border-radius: 2rem;
+	border: 1px solid var(--azulTec);
+    
+}
+
+.olvidar a{
+    text-align: center;
+    margin-top: 5%;
+    text-decoration: none;
+    color: black;
+
+}
+
+input[type="submit"]{
+    width: 90%;
+    padding: 10px;
+   
+    background-color: var(--azulTec);
+    border-radius: 20px;
+    border: none;
+    color: var(--blanco);
+    cursor:pointer;
+
+    margin-bottom: 2rem;
+    
+
+}
+
+.botonRegistro{
+    width: 90%;
+    padding: 1rem;
+    background-color: var(--azulTec);
+    color: var(--blanco);
+    
+    margin-top: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+/*diseño del label para el checkbox*/
+.campo-switch{
+    padding-top: 15rem;
+    padding-left: 10rem;
+}
+.campo-switch2{
+    display: flex;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+}
+.campo-switch2  p{
+    font-size: 2rem;
+}
+.lbl{
+    
+    display: inline-block;
+    width: 65px;
+    height: 35px;
+    background: var(--gris);
+    border-radius: 100px;
+    cursor: pointer;
+    position: relative;
+    transition: .2s;
+}
+/*Diseño de un sobrecontenedor que es el que se mueve al activar o desactivar el checkbox*/
+.lbl::after{
+    content: " ";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: var(--blanco);
+    border-radius: 100px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: .2s;
+}
+
+/*movimineot del label al estar activado el checkbox*/
+#switch:checked + .lbl::after{
+    left: 36px;
+}
+/*color que toma el label al estar activado el checkbox*/
+#switch:checked + .lbl{
+    background:rgb(43, 211, 223);
+}
+/*esconde el checkbox original sin edicion*/
+#switch{
+    display: none;
+}
+/*segundo switch de talleres-------------------------------------------------------------------------*/
+#switch1:checked + .lbl::after{
+    left: 36px;
+}
+#switch1:checked + .lbl{
+    background:rgb(43, 211, 223);
+}
+#switch1{
+    display: none;
+}
+/**/
+#switch2:checked + .lbl::after{
+    left: 36px;
+}
+#switch2:checked + .lbl{
+    background:rgb(43, 211, 223);
+}
+#switch2{
+    display: none;
+}
+/*segundo switch de talleres*/
+#switch3:checked + .lbl::after{
+    left: 36px;
+}
+#switch3:checked + .lbl{
+    background:rgb(43, 211, 223);
+}
+#switch3{
+    display: none;
+}
+/*segundo switch de talleres*/
+#switch4:checked + .lbl::after{
+    left: 36px;
+}
+#switch4:checked + .lbl{
+    background:rgb(43, 211, 223);
+}
+#switch4{
+    display: none;
+}
+/*segundo switch de talleres*/
+#switch5:checked + .lbl::after{
+    left: 36px;
+}
+#switch5:checked + .lbl{
+    background:rgb(43, 211, 223);
+}
+#switch5{
+    display: none;
+}
+/*segundo switch de talleres*/
+#switch6:checked + .lbl::after{
+    left: 36px;
+}
+#switch6:checked + .lbl{
+    background:rgb(43, 211, 223);
+}
+#switch6{
+    display: none;
+}
+/*segundo switch de talleres*/
+#switch7:checked + .lbl::after{
+    left: 36px;
+}
+#switch7:checked + .lbl{
+    background:rgb(43, 211, 223);
+}
+#switch7{
+    display: none;
+}
+/*---------------------------------------------------------------------------------------------------*/
+/*Formulario de registro*/
+
+/*configuracion de la pagina de confirmar pago*/
+/*ubicacion del checkbox en mobile*/
+.f1{
+    padding-top: 1%;
+    padding-left: 10%;
+    display: flex;
+}
+.TyC4{
+    /*Usamos grid para definir ubicacion y tamaño de esta seccion*/
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1rem;
+    
+
+}
+/*Ubicacion para ipad y desktop*/
+@media(min-width: 768px){
+    /*
+    .f1{
+        padding-top: 15%;
+        padding-left: 20%;
+        display: flex;
+    }
+    */
+    .TyC4{
+        /*Usamos grid para definir ubicacion y tamaño de esta seccion*/
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
+        
+    
+    }
+}
+@media(min-width: 1200px){
+    /*
+    .f1{
+        padding-top: 1%;
+        padding-left: 20%;
+        display: flex;  
+    }
+    */
+    .TyC4{
+        /*Usamos grid para definir ubicacion y tamaño de esta seccion*/
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
+        
+    
+    }
+}
+.TyC5{
+    /*Usamos grid para definir ubicacion y tamaño de esta seccion*/
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    text-align:justify;
+
+}
+@media(min-width: 768px){
+    .TyC5{
+        /*Usamos grid para definir ubicacion y tamaño de esta seccion*/
+        padding-left: 10rem;
+        padding-right: 10rem;
+        align-items: center;
+        justify-content: center;
+    
+        text-align:justify;
+    }
+}
+/*Fin de configuraciopn de pagina de confrimar*/
+
+
+.contenidoSombra1{
+    text-align: center;
+    align-items: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+
+
+.blanco{
+    color: var(--blanco);
+}
+
