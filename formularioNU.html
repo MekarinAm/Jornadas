@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/styles.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--PARTE JOSE-->
+        <!--Cargamos fuente y hoja de estilos junto con normalize-->
+        <link rel="preload" href="/css/normalize.css" as="style">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+        </style>
+        <!--Logo ITP en pestaña-->
+        <link rel="icon" href="/media/itplogo.png">
+        <title>Nuevo Usuario</title>
+        <link rel="preload" href="/css/styles.css" as="style">
+        <link href="/css/styles.css" rel="stylesheet">
+    </head>
+    
+        
+    <div class="nav-bg">
+        <div class="logos">
+            <div class="TyC8">
+            <img src="media/TecNM-logo.png" alt="tecnm" class="logos_img">
+            <img src="media/itplogo.png" alt="itp" class="logos_img">
+            <img src="media/50aniv.png" alt="itp_50" class="logos_img">
+            </div>
+        </div>
+        <nav class="navegacion-principal contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="paquetes.html">Paquetes</a>
+            <a href="registro.html">Registro</a>
+        </nav>
+    </div>
+
+   
+
+    <main class="contenedor sombra">
+        <section>
+            
+
+            <form name="form" action="/php/registro.php" method="post" class="formulario" >
+                <fieldset>
+                    <legend>Jornadas TIC's</legend>
+                    <p>REGISTRATE</p>
+                    <p>Llena los siguientes campos para registrarte</p>
+
+                    <div class="contenedor-campos2">
+
+                        <div class="campo">
+                            
+                            <input class="input-text" type="text" name="nControl" placeholder="Numero de Control" id="ncontrol" required>
+                        </div>
+
+                        <div class="campo">
+                            
+                            <input class="input-text" type="text" name="nombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="campo">
+                            
+                            <input class="input-text" type="text" name="aPat" placeholder="Apellido Paterno" required>
+                        </div>
+                        <div class="campo">
+                            
+                            <input class="input-text" type="text" name="aMat" placeholder="Apellido Materno" required>
+                        </div>
+                        <div class="campo">
+                            
+                            <input class="input-text" type="email" name="correoIns" placeholder="Correo Institucional" required>
+                        </div>
+
+                        <div class="campo">
+                            
+                            <input class="input-text" type="password" name="contrasenia" placeholder="Contraseña" id="contra" required>
+                        </div>
+                        
+                        <div class="campo">
+                            <label for="semestreCur">Semestre actual</label>
+                            <select class="input-text" name="semestreCur">
+                            
+                                <option value="1">1°</option>
+                                <option value="2">2°</option>
+                                <option value="3">3°</option>
+                                <option value="4">4°</option>
+                                <option value="5">5°</option>
+                                <option value="6">6°</option>
+                                <option value="7">7°</option>
+                                <option value="8">8°</option>
+                                <option value="9">9°</option>
+                                <option value="10">10°</option>
+                                <option value="11">11°</option>
+                                <option value="12">12°</option>
+                                <option value="13">13°</option>
+                                <option value="14">14°</option>
+                                <option value="15">15°</option>
+                            </select>  
+                        </div>
+
+                        <div class="campo">
+                            <label for="carrera">Carrera</label>
+                            <select class="input-text" name="carrera">
+                            
+                                <option value="TICs">Ing. Tecnologias de la Informacion y Comunicaciones</option>
+                                <option value="Gestion Empresarial">Ing. Gestion Empresarial</option>
+                                <option value="Industrial">Ing. Industrial</option>
+                                <option value="Logistica">Ing. Logistica</option>
+                                <option value="Administracion">Lic. Administracion</option>
+                                <option value="Electrica">Ing. Electrica</option>
+                                <option value="Electronica">Ing. Electronica</option>
+                                <option value="Mecanica">Ing. Mecanica</option>
+                                
+                            </select> 
+                            
+                        </div>
+   
+                    </div> <!-- .contenedor-campos -->
+
+                    <input type="submit" name="enviarRegistro" id="enviarReg" value="ENVIAR">
+                </fieldset>    
+    
+               
+                
+            </form>
+        </section>
+        
+    </main>
+    <footer>
+        <p>Instituto Tecnológico de Puebla<br> &copy Todos los Derechos Reservados<br>
+            Av. Tecnológico 420 Col. Maravillas. Puebla, Pue. C.P. 72220<br>
+            Tels. 222 2298868 y 57
+        </p>
+    </footer>
+<body>
+</body>
+</html>
